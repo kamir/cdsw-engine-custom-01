@@ -1,5 +1,7 @@
 # Dockerfile
 
+MAINTAINER Mirko Kämpf "mirko@cloudera.com"
+
 FROM cloudera-cdsw-docker-repo.jfrog.io/cdsw/engine:1
 RUN apt-get update && \
     apt-get install -y -q mecab \
@@ -7,9 +9,11 @@ RUN apt-get update && \
                           mecab-ipadic-utf8 && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
-RUN cd /tmp && \
-    git clone --depth 1 https://github.com/neologd/mecab-ipadic-neologd.git && \
-    /tmp/mecab-ipadic-neologd/bin/install-mecab-ipadic-neologd -y -n -p /var/lib/mecab/dic/neologd && \
-    rm -rf /tmp/mecab-ipadic-neologd
-RUN pip install --upgrade pip
-RUN pip install mecab-python==0.996
+
+# update packages and install maven
+RUN  \
+  export DEBIAN_FRONTEND=noninteractive && \
+  sed -i 's/# \(.*multiverse$\)/\1/g' /etc/apt/sources.list && \
+  apt-get update && \
+  apt-get -y upgrade && \
+  apt-get install -y vim wget curl git maven
