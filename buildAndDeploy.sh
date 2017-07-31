@@ -1,4 +1,4 @@
-docker build -t kamir/cdsw-base-with-maven-graphviz-gnuplot . 
+docker build -t kamir/cdsw-base-with-maven-graphviz-gnuplot-cuda . 
 
 
 
