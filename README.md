@@ -1,2 +1,2 @@
 # cdsw-engine-custom-01
-Add Maven to a custom engine.
+This repository contains supplementary material for a Cloudera Blog post ... (under construction).
