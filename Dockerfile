@@ -11,9 +11,5 @@ RUN apt-get update && \
 
 RUN pip install graphviz
 
-RUN wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/cuda-repo-ubuntu1604_8.0.61-1_amd64.deb
-RUN dpkg -i cuda-repo-ubuntu1604_8.0.61-1_amd64.deb
-RUN apt-get update
-RUN apt-get -y install cuda
 
 
