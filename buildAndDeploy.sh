@@ -1,15 +1,13 @@
-docker build -t kamir/cdsw-base-with-maven-graphviz-gnuplot-cuda . 
+export L=cdsw-caps-cuda
 
-
+docker build -t kamir/$L . 
 
 export T=$(date +%I_%M_%S)
 echo "current time is: ".$T
 
-
-
 docker image ls
 
-docker run -it -d --name container_$T kamir/cdsw-base-with-maven-graphviz-gnuplot
+docker run -it -d --name container_$T kamir/$L
 
 docker container ls
 
