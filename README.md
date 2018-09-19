@@ -1,4 +1,4 @@
-# cdsw-engine-custom-01
+# Cypher on CDSW 
 This branch of the repository contains the docker file to build a custom image for CDSW including CAPS (Cypher on Apache Spark).
 
 This is supplementary material for a blog post ... (under construction).
